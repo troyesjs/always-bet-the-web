@@ -1,0 +1,22 @@
+.bet, .gamble {
+    display: block;
+    width: 30%;
+    margin: 10px auto;
+    border: solid black 2px;
+    border-radius: 3px;
+    padding : 10px 15px;
+    font-size: 1.5em;
+}
+
+.gamble {
+    background-color: #333;
+    color: #FFF;
+    text-decoration: none;
+    text-align:center;
+}
+
+.gamble:hover {
+    background-color: #555; 
+    transition: background-color 300ms ease-out;
+}
+
