@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Always Bet The Web</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Going Native ?
+
+---
+
+class: center
+
+## Native vs. Hybrid vs. Web
+
+![native-vs-hybird](./img/Strip-dileme-appli-mobile-650-Finalenglish3.jpg)
+
+---
+
+class: center
+
+## Download the app
+
+![wtf](img/download.png)
+
+---
+
+class: center,middle
+
+## Why an app ?
+
+---
+
+class: center, middle
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Native</th>
+            <th>Web</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>UX</td>
+            <th>✅</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Integrated</td>
+            <th>✅</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Offline</td>
+            <th>✅</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Performance</td>
+            <th>✅</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Indexed</td>
+            <th>✅</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Security</td>
+            <th>✅</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Hardware</td>
+            <th>✅</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Background</td>
+            <th>✅</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Standard</td>
+            <th></th>
+            <th>✅</th>
+        </tr>
+    </tbody>
+</table>
+---
+
+class: center, middle
+
+## This WAS true
+
+---
+
+class: center, middle
+
+# The future is now
+
+---
+
+class: center, middle
+
+## Browsers have changed
+
+![desktop-browsers](./img/main-desktop-browser-logos.png)
+![desktop-browsers](./img/main-mobile-browser-logos.png)
+
+---
+
+class: center, middle
+
+## Release early, release often
+
+---
+
+class: center, middle
+
+## Mobile usages have also changed
+
+![usage](./img/mobile.jpeg)
+
+---
+
+class: center, middle
+
+## Web Standards evolve quickly
+
+---
+
+class: center, middle
+
+## 🚀 APIs 🚀
+
+---
+
+class: center, middle
+
+### Notifications
+
+---
+
+class: middle
+
+```js
+new Notification('Yeah', {
+    body : 'the body message',
+    icon : 'some-image.png'
+});
+```
+
+---
+
+class: center, middle
+
+### WebSocket
+
+---
+
+class: middle
+
+```js
+// Create WebSocket connection.
+const socket = new WebSocket('ws://localhost:8080');
+
+// Connection opened
+socket.addEventListener('open', function (event) {
+    socket.send('Hello Server!');
+});
+
+// Listen for messages
+socket.addEventListener('message', function (event) {
+    console.log('Message from server', event.data);
+});
+```
+
+---
+
+class: center, middle
+
+## WebCrypto
+
+
+---
+
+class: middle
+
+```js
+window.crypto.subtle.digest(
+    {
+        name: "SHA-256",
+    },
+    new Uint8Array([1,2,3,4]) //The data you want to hash as an ArrayBuffer
+)
+.then(function(hash){
+    //returns the hash as an ArrayBuffer
+    console.log(new Uint8Array(hash));
+})
+.catch(function(err){
+    console.error(err);
+});
+```
+---
+
+class: center, middle
+
+## WebWorker/SharedWorker
+
+---
+
+class: middle
+
+```js
+var myWorker = new Worker('worker.js'); //SharedWorker
+
+myWorker.onmessage = event => console.log('Worker said : ' + event.data);
+myWorker.postMessage('alo!');
+```
+
+```js
+onmessage = event => {
+    console.log('Main UI said : ' + event.data);
+    postMessage('Here we go');
+}
+```
+---
+
+class: center, middle
+
+## WebRTC
+
+---
+
+class: center, middle
+
+### Real Time Communication
+`getUserMedia` + `RTCPeerConnection` + `RTCDataChannel`
+
+---
+
+class: center, middle
+
+## Web Manifest
+
+---
+
+class: middle
+
+```html
+<link rel="manifest" href="/manifest.json">
+```
+
+```json
+{
+  "name": "HackerWeb",
+  "short_name": "HackerWeb",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "A simply readable Hacker News app.",
+  "icons": [{
+    "src": "images/touch/homescreen48.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": "images/touch/homescreen72.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  }, {
+    "src": "images/touch/homescreen96.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  }],
+  "related_applications": [{
+    "platform": "web"
+  }, {
+    "platform": "play",
+    "url": "https://play.google.com/store/apps/details?id=cheeaun.hackerweb"
+  }]
+}
+```
+---
+
+class: center, middle
+
+![homescreen](./img/home.jpg)
+
+---
+
+class: center, middle
+
+## Storage
+
+### Cookie
+
+### WebStorage
+
+### IndexedDB
+
+---
+
+class: middle
+
+```js
+var request = window.indexedDB.open("my-database", 1);
+request.onsuccess = function (evt) {
+    const db = this.result;
+
+    const transaction = db.transaction(["my-store"], "readwrite");
+    const objectStore = transaction.objectStore("my-store");
+    objectStore.add({
+        id : '12',
+        title : 'Foo'
+    });
+}
+
+request.onerror = err => console.error(err);
+
+request.onupgradeneeded = evt => {
+    const store = evt.currentTarget.result.createObjectStore('my-store', { keyPath: 'id', autoIncrement: true });
+    store.createIndex('id', 'id', { unique: true });
+    store.createIndex('title', 'title', { unique: false });
+};
+```
+
+---
+
+class: center, middle
+
+## Offline
+
+### Appmanifest 👎
+
+### SericeWorkers 👍
+
+---
+
+- WebAssembly
+- WebGL
+- WebVR
+- Web Audio / Web Midi
+- Web Payments / Budget
+- Web Speech
+- Media / Devices
+- WebBluetooth
+- ...
+
+---
+
+class: center, middle
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Native</th>
+            <th>Web</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>UX</td>
+            <th>✅</th>
+            <th>✅</th>
+        </tr>
+        <tr>
+            <td>Integrated</td>
+            <th>✅</th>
+            <th>✅</th>
+        </tr>
+        <tr>
+            <td>Offline</td>
+            <th>✅</th>
+            <th>✅</th>
+        </tr>
+        <tr>
+            <td>Performance</td>
+            <th>✅</th>
+            <th>✅</th>
+        </tr>
+        <tr>
+            <td>Indexed</td>
+            <th>✅</th>
+            <th>✅</th>
+        </tr>
+        <tr>
+            <td>Security</td>
+            <th>✅</th>
+            <th>✅</th>
+        </tr>
+        <tr>
+            <td>Hardware</td>
+            <th>✅</th>
+            <th>🕒</th>
+        </tr>
+        <tr>
+            <td>Background</td>
+            <th>✅</th>
+            <th>🕒</th>
+        </tr>
+        <tr>
+            <td>Standard</td>
+            <th></th>
+            <th>✅</th>
+        </tr>
+    </tbody>
+</table>
+---
+
+class: center, middle
+
+## @kramp
+
+
+    </textarea>
+    <script src="js/remark-latest.min.js"></script>
+    <script>
+        var slideshow = remark.create({
+            ratio: '4:3'
+        });
+    </script>
+  </body>
+</html>

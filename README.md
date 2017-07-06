@@ -1,10 +1,11 @@
 # Going native : Always bet the web
 
-## State of the browsers
 
 ## Native vs Web
 
  - from a mobile web site : Download the app
+
+## State of the browsers
 
 ## The future is today
 

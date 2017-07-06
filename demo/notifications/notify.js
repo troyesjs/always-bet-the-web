@@ -1,9 +1,5 @@
 (function(){
 
-    /**
-     * 1/5 to win
-     * @returns {Boolean}
-     */
     const win = (value = -1) => {
         const rand = Math.floor(Math.random() * 5);
 
@@ -12,11 +8,14 @@
         return rand === parseInt(value, 10);
     };
 
-    const notify = (title, message) => {
+    const notify = (title, message, icon) => {
         if( !('Notification' in window) || Notification.permission === 'denied' ) {
             return alert(message);
         }
-        const createNotification = () => new Notification(title, { body : message });
+        const createNotification = () => new Notification(title, {
+            body : message,
+            icon : icon
+        });
 
         if(Notification.permission !== 'granted') {
             Notification.requestPermission( permission => {
@@ -38,11 +37,10 @@
         const value = betValue.value;
 
         if(win(value)){
-            notify('You win', `${value} was correct`);
+            notify('You win', `${value} was correct`, 'coins.png');
         } else {
             notify('Try again');
         }
     });
-
 
 }());

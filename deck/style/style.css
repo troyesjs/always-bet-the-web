@@ -1,0 +1,122 @@
+
+@font-face {
+  font-family: 'Galindo';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Galindo'),
+        url('../fonts/Galindo/Galindo-Regular.eot') format('eot'),
+        url('../fonts/Galindo/Galindo-Regular.woff') format('woff'),
+        url('../fonts/Galindo/Galindo-Regular.ttf') format('truetype'),
+        url('../fonts/Galindo/Galindo-Regular.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'PT_Serif';
+  font-style: normal;
+  font-weight: bold;
+  src: local('PT Serif'), local('PT_Serif'), local('PTSerif'),
+        url('../fonts/PT_Serif/PT_Serif-Bold.eot') format('eot'),
+        url('../fonts/PT_Serif/PT_Serif-Bold.woff') format('woff'),
+        url('../fonts/PT_Serif/PT_Serif-Bold.ttf') format('truetype'),
+        url('../fonts/PT_Serif/PT_Serif-Bold.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'PT_Serif';
+  font-style: normal;
+  font-weight: normal;
+  src: local('PT_Serif'),
+        url('../fonts/PT_Serif/PT_Serif-Regular.eot') format('eot'),
+        url('../fonts/PT_Serif/PT_Serif-Regular.woff') format('woff'),
+        url('../fonts/PT_Serif/PT_Serif-Regular.ttf') format('truetype'),
+        url('../fonts/PT_Serif/PT_Serif-Regular.svg') format('svg');
+}:
+
+@font-face {
+  font-family: 'PT_Serif';
+  font-style: italic;
+  font-weight: bold;
+  src: local('PT Serif'), local('PT_Serif'), local('PTSerif'),
+        url('../fonts/PT_Serif/PT_Serif-BoldItalic.eot') format('eot'),
+        url('../fonts/PT_Serif/PT_Serif-BoldItalic.woff') format('woff'),
+        url('../fonts/PT_Serif/PT_Serif-BoldItalic.ttf') format('truetype'),
+        url('../fonts/PT_Serif/PT_Serif-BoldItalic.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'PT_Serif';
+  font-style: italic;
+  font-weight: normal;
+  src: local('PT_Serif'),
+        url('../fonts/PT_Serif/PT_Serif-Italic.eot') format('eot'),
+        url('../fonts/PT_Serif/PT_Serif-Italic.woff') format('woff'),
+        url('../fonts/PT_Serif/PT_Serif-Italic.ttf') format('truetype'),
+        url('../fonts/PT_Serif/PT_Serif-Italic.svg') format('svg');
+}
+
+body {
+    font-family: 'PT_Serif';
+    color: #6ebef3;
+}
+h1, h2, h3 {
+    font-family: 'Galindo';
+    font-weight: normal;
+    color: #6ebef3;
+}
+a {
+    color: #6ebef3;
+}
+a:hover {
+    text-decoration: none;
+}
+.remark-container {
+    background-color: #666;
+}
+.remark-slide-content {
+    background-color: #333;
+}
+.remark-slide-number {
+    color: #888;
+}
+.remark-code, .remark-inline-code {
+    font-family: Consolas,Monaco,"Andale Mono",monospace;
+    font-size: .9rem;
+}
+blockquote {
+    background-color: #eee;
+    font-style: italic;
+    padding: .5rem 2rem;
+    color: #222;
+    position:relative;
+    margin: 0;
+    font-size: 1.5rem;
+}
+blockquote:before {
+    content : '\201F';
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+}
+img {
+    box-shadow: inherit;
+    max-width: 85%;
+}
+.remark-slide-content h1 {
+    font-size: 70px;
+}
+table {
+    width: 100%;
+    margin :auto;
+    border-collapse: collapse;;
+}
+th, td {
+    border: solid 1px #444;
+    text-align: left;
+    padding: 5px 10px;
+}
+th {
+    text-align: center;
+}
+
